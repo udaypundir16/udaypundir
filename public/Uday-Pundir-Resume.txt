@@ -1,0 +1,21 @@
+Uday Pundir
+Full Stack Developer | React, Next.js, Supabase
+
+Email: udayr6588@gmail.com
+Phone: 9761344501
+Location: Greater Noida, India
+
+Summary:
+Passionate full stack developer and B.Tech CSE student focused on building clean, scalable, and user-friendly web applications.
+
+Education:
+B.Tech in Computer Science & Engineering (2024-2028)
+Galgotias College of Engineering & Technology
+
+Projects:
+- SettleIn
+- Agrovision
+- Webspp Smart Agri
+
+Note:
+Replace this placeholder text file with your final PDF resume in production.

@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --foreground: #0f172a;
+  --muted: #475569;
+  --border: #e2e8f0;
+  --primary: #6366f1;
+  --secondary: #8b5cf6;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --font-sans: var(--font-alata);
+  --font-display: var(--font-aldrich);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-alata), var(--font-aldrich), "Segoe UI", Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-aldrich), var(--font-alata), "Segoe UI", Arial, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+* {
+  border-color: var(--border);
+}
+
+::selection {
+  background: #c7d2fe;
+  color: #1e1b4b;
+}
