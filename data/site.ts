@@ -2,8 +2,10 @@ export const siteConfig = {
   name: "Uday Pundir",
   role: "Full Stack Developer | React, Next.js, Supabase",
   email: "udayr6588@gmail.com",
-  phone: "9761344501",
-  location: "Greater Noida, India",
+  phone: "+91 9761344501",
+  location: "Greater Noida, UP",
+  linkedin: "https://linkedin.com/in/udaypundir16",
+  github: "https://github.com/udaypundir16",
   education:
     "B.Tech in Computer Science & Engineering (2024-2028), Galgotias College of Engineering & Technology",
 };
@@ -76,7 +78,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    title: "Webspp Smart Agri",
+    title: "Farmer360",
     description:
       "A real-time agriculture platform built during Dextrix 2025 by team Future Forge with live crop prices, government schemes, and relevant agri insights.",
     stack: ["React", "Supabase", "Real-time Database"],
@@ -87,7 +89,7 @@ export const projects: Project[] = [
       "2nd position in round 2 out of 50 teams",
     ],
     githubUrl: "https://github.com/",
-    liveUrl: "https://example.com/",
+    liveUrl: "https://farmer360.vercel.app",
     featured: true,
   },
 ];
@@ -111,23 +113,61 @@ export type SkillGroup = {
 export const skillGroups: SkillGroup[] = [
   {
     title: "Languages",
-    skills: ["HTML", "CSS", "JavaScript", "C", "C++", "Python"],
+    skills: ["C", "C++", "Java", "Python", "JavaScript"],
   },
   {
     title: "Frontend",
-    skills: ["React.js", "Next.js"],
+    skills: ["HTML5", "CSS3", "React.js", "Next.js"],
   },
   {
-    title: "Backend / Database",
-    skills: ["SQL", "REST APIs", "Supabase", "Firebase"],
+    title: "Backend",
+    skills: ["Node.js", "Express.js", "REST APIs"],
   },
   {
-    title: "Tools / Platforms",
-    skills: ["VS Code", "Git", "GitHub", "Vercel"],
+    title: "Databases",
+    skills: ["SQL", "MongoDB", "Supabase"],
   },
   {
-    title: "Problem Solving",
-    skills: ["DSA in C++", "LeetCode", "HackerRank"],
+    title: "AI & Automation",
+    skills: ["Generative AI", "RAG", "Agentic AI", "n8n"],
+  },
+  {
+    title: "Developer Tools",
+    skills: ["Git", "GitHub", "VS Code", "IntelliJ IDEA", "Vercel"],
+  },
+];
+
+export type Certification = {
+  title: string;
+  issuer: string;
+};
+
+export const certifications: Certification[] = [
+  { title: "AWS Educate Machine Learning Foundations", issuer: "Amazon" },
+  { title: "Data Science Essentials with Python", issuer: "Cisco" },
+  { title: "Generative AI in Action", issuer: "IBM" },
+  { title: "Develop Generative AI Apps in Azure", issuer: "Microsoft" },
+  { title: "Data Analytics Job Simulation", issuer: "Deloitte Australia - Forage" },
+  { title: "Introduction to Cloud Infrastructure", issuer: "Microsoft" },
+];
+
+export type Experience = {
+  role: string;
+  company: string;
+  period: string;
+  bullets: string[];
+};
+
+export const experience: Experience[] = [
+  {
+    role: "Full-Stack Developer",
+    company: "Freelance",
+    period: "2025 – Present",
+    bullets: [
+      "Engineered and deployed responsive full-stack web applications using React, Node.js, Express, and MongoDB, handling both client-facing UI and backend architecture.",
+      "Designed and delivered a business website for Aggarwal Misthan Bhandar, giving a local retail brand its first digital storefront and improving customer discoverability and product visibility online.",
+      "Owned the full project lifecycle — UI design, REST API development, database integration, and production deployment — as sole developer on client engagements.",
+    ],
   },
 ];
 
@@ -204,7 +244,7 @@ export const achievements: Achievement[] = [
   {
     title: "Team Future Forge",
     description:
-      "Built Webspp Smart Agri with Future Forge, emphasizing collaboration and practical execution.",
+      "Built Farmer360 with Future Forge, emphasizing collaboration and practical execution.",
     tag: "Teamwork",
   },
   {
@@ -246,12 +286,15 @@ export const focusAreas = [
 ];
 
 export const coursework = [
-  "Data Structures and Algorithms",
+  "Data Structures & Algorithms",
   "Object-Oriented Programming",
-  "Database Management Systems",
   "Operating Systems",
-  "Computer Networks",
-  "Software Engineering",
+  "Cyber Security",
+  "Theory of Automata",
+  "Database Management Systems",
+  "Java",
+  "Web Development",
+  "AI Technologies",
 ];
 
 export const currentlyLearning = [

@@ -5,7 +5,6 @@ const BASE_URL = "https://uday-pundir-portfolio.vercel.app";
 const routes = [
   "",
   "/about",
-  "/projects",
   "/education",
   "/skills",
   "/journey",

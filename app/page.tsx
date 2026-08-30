@@ -40,8 +40,8 @@ export default function HomePage() {
               </p>
 
               <div className="mt-7 flex flex-wrap items-center gap-3">
-                <Link href="/projects" className={buttonVariants({ variant: "primary" })}>
-                  View Projects
+                <Link href="/resume" className={buttonVariants({ variant: "primary" })}>
+                  View Resume
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
@@ -77,21 +77,6 @@ export default function HomePage() {
 
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {featuredProjects.map((project, index) => (
-              <ProjectCard key={project.title} project={project} index={index} />
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      <section className="pb-14">
-        <Container>
-          <SectionTitle
-            title="Projects"
-            description="All projects and demos — real-world, hackathon, and experimental builds."
-          />
-
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {projects.map((project, index) => (
               <ProjectCard key={project.title} project={project} index={index} />
             ))}
           </div>
