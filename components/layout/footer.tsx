@@ -28,16 +28,38 @@ export function Footer() {
             Quick Links
           </h3>
           <ul className="grid gap-2 text-sm">
-            {navItems.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className="text-slate-600 transition-colors hover:text-indigo-600"
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
+            {navItems.map((item) => {
+              const isExternal =
+                item.external ||
+                item.href.endsWith(".pdf") ||
+                item.href.startsWith("http");
+
+              if (isExternal) {
+                return (
+                  <li key={item.href}>
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-slate-600 transition-colors hover:text-indigo-600"
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                );
+              }
+
+              return (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="text-slate-600 transition-colors hover:text-indigo-600"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </div>
 

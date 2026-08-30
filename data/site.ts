@@ -13,13 +13,12 @@ export const siteConfig = {
 export type NavItem = {
   href: string;
   label: string;
+  external?: boolean;
 };
 
 export const navItems: NavItem[] = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/skills", label: "Skills" },
-  { href: "/resume", label: "Resume" },
   { href: "/contact", label: "Contact" },
 ];
 

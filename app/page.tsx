@@ -1,7 +1,9 @@
-import { ArrowRight, FileText, Mail, GraduationCap, BookOpen, MapPin } from "lucide-react";
+import { FileText, Mail, GraduationCap, BookOpen, MapPin } from "lucide-react";
 import Link from "next/link";
 
 import { ProjectCard } from "@/components/cards/project-card";
+import { SkillCard } from "@/components/cards/skill-card";
+import { AchievementCard } from "@/components/cards/achievement-card";
 import { CTASection } from "@/components/common/cta-section";
 import { SectionTitle } from "@/components/common/section-title";
 import { HeroVisual } from "@/components/home/hero-visual";
@@ -10,7 +12,13 @@ import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
-import { projects, topSkills, coursework, currentlyLearning } from "@/data/site";
+import {
+  projects,
+  skillGroups,
+  achievements,
+  coursework,
+  currentlyLearning,
+} from "@/data/site";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata(
@@ -40,10 +48,15 @@ export default function HomePage() {
               </p>
 
               <div className="mt-7 flex flex-wrap items-center gap-3">
-                <Link href="/resume" className={buttonVariants({ variant: "primary" })}>
-                  View Resume
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
+                <a
+                  href="/Uday-Pundir-Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={buttonVariants({ variant: "primary" })}
+                >
+                  Resume
+                  <FileText className="h-4 w-4" />
+                </a>
                 <Link
                   href="/contact"
                   className={buttonVariants({ variant: "secondary" })}
@@ -51,15 +64,6 @@ export default function HomePage() {
                   Contact Me
                   <Mail className="h-4 w-4" />
                 </Link>
-                <a
-                  href="/Uday-Pundir-Resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={buttonVariants({ variant: "outline" })}
-                >
-                  Resume
-                  <FileText className="h-4 w-4" />
-                </a>
               </div>
             </Reveal>
 
@@ -87,30 +91,34 @@ export default function HomePage() {
       <section className="pb-14">
         <Container>
           <SectionTitle
-            title="Skills Snapshot"
-            description="Core technologies and strengths I use to design and build modern products."
+            title="Technical Skills"
+            description="A structured overview of languages, frameworks, tools, and coding practice areas I use to deliver quality software."
           />
 
-          <Reveal>
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm shadow-slate-200/60">
-              <div className="flex flex-wrap gap-2">
-                {topSkills.map((skill) => (
-                  <Badge key={skill} tone="soft" className="px-3 py-1.5 text-sm">
-                    {skill}
-                  </Badge>
-                ))}
-              </div>
-              <div className="mt-5">
-                <Link
-                  href="/skills"
-                  className={buttonVariants({ variant: "ghost", className: "px-0" })}
-                >
-                  View full skills breakdown
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
-            </div>
-          </Reveal>
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {skillGroups.map((group, index) => (
+              <Reveal key={group.title} delay={index * 0.06}>
+                <SkillCard title={group.title} skills={group.skills} />
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="pb-14">
+        <Container>
+          <SectionTitle
+            title="Achievements"
+            description="Milestones, hackathon recognitions, and competitive problem-solving highlights."
+          />
+
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {achievements.map((achievement, index) => (
+              <Reveal key={achievement.title} delay={index * 0.06}>
+                <AchievementCard achievement={achievement} />
+              </Reveal>
+            ))}
+          </div>
         </Container>
       </section>
 

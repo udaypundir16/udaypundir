@@ -35,14 +35,14 @@ export function CTASection() {
                 Start a Conversation
               </Link>
               <Link
-                href="/skills"
+                href="/about"
                 className={buttonVariants({
                   variant: "ghost",
                   className:
                     "border border-white/30 text-white hover:bg-white/15",
                 })}
               >
-                Explore Skills
+                Learn More About Me
               </Link>
             </div>
           </div>

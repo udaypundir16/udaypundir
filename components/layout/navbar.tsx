@@ -9,10 +9,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { Container } from "@/components/ui/container";
-import { navItems, siteConfig } from "@/data/site";
+import { navItems } from "@/data/site";
 import { cn } from "@/lib/utils";
 
 function isNavItemActive(href: string, pathname: string) {
+  if (href.endsWith(".pdf") || href.startsWith("http")) {
+    return false;
+  }
   if (href === "/") {
     return pathname === "/";
   }
@@ -66,6 +69,21 @@ export function Navbar() {
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Main">
           {navItems.map((item) => {
             const active = isNavItemActive(item.href, pathname);
+            const isExternal = item.external || item.href.endsWith(".pdf") || item.href.startsWith("http");
+
+            if (isExternal) {
+              return (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-900"
+                >
+                  {item.label}
+                </a>
+              );
+            }
 
             return (
               <Link
@@ -111,6 +129,21 @@ export function Navbar() {
             <Container className="grid py-3">
               {navItems.map((item) => {
                 const active = isNavItemActive(item.href, pathname);
+                const isExternal = item.external || item.href.endsWith(".pdf") || item.href.startsWith("http");
+
+                if (isExternal) {
+                  return (
+                    <a
+                      key={item.href}
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100"
+                    >
+                      {item.label}
+                    </a>
+                  );
+                }
 
                 return (
                   <Link
