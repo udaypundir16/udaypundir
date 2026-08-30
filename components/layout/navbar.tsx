@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -49,15 +50,17 @@ export function Navbar() {
       <Container className="flex h-20 items-center justify-between">
         <Link
           href="/"
-          className="group inline-flex items-center gap-2 text-slate-900"
-          aria-label="Go to home page"
+          className="group inline-flex items-center"
+          aria-label="Uday Pundir - Home"
         >
-          <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-violet-500 text-sm font-semibold text-white shadow-sm shadow-indigo-200">
-            UP
-          </span>
-          <span className="text-sm font-semibold tracking-wide sm:text-base">
-            {siteConfig.name}
-          </span>
+          <Image
+            src="/signature-logo.png"
+            alt="Uday Pundir"
+            width={320}
+            height={90}
+            priority
+            className="h-10 w-auto object-contain mix-blend-multiply sm:h-12"
+          />
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Main">

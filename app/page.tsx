@@ -1,4 +1,4 @@
-import { ArrowRight, Download, Mail, GraduationCap, BookOpen, MapPin } from "lucide-react";
+import { ArrowRight, FileText, Mail, GraduationCap, BookOpen, MapPin } from "lucide-react";
 import Link from "next/link";
 
 import { ProjectCard } from "@/components/cards/project-card";
@@ -30,7 +30,7 @@ export default function HomePage() {
               <Badge className="mb-4">
                 Open to internships and freelance opportunities
               </Badge>
-              <h1 className="text-balance text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
+              <h1 className="text-balance text-3xl font-bold tracking-tight text-slate-900 xs:text-4xl sm:text-5xl lg:text-6xl">
                 <TypewriterText text="Hi, I'm Uday Pundir" cycleMs={4000} />
               </h1>
               <p className="mt-4 max-w-2xl text-pretty text-lg leading-relaxed text-slate-600">
@@ -52,12 +52,13 @@ export default function HomePage() {
                   <Mail className="h-4 w-4" />
                 </Link>
                 <a
-                  href="/Uday-Pundir-Resume.txt"
-                  download
+                  href="/Uday-Pundir-Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={buttonVariants({ variant: "outline" })}
                 >
-                  Download Resume
-                  <Download className="h-4 w-4" />
+                  Resume
+                  <FileText className="h-4 w-4" />
                 </a>
               </div>
             </Reveal>

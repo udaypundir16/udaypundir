@@ -22,33 +22,36 @@ export default function ResumePage() {
             <h1 className="text-3xl font-bold text-slate-900 sm:text-4xl">
               {siteConfig.name}
             </h1>
-            <p className="mt-2 text-sm text-slate-600">
-              {siteConfig.location} | {siteConfig.phone} |{" "}
+            <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs text-slate-600 sm:text-sm">
+              <span>{siteConfig.location}</span>
+              <span className="hidden text-slate-300 sm:inline">•</span>
+              <span>{siteConfig.phone}</span>
+              <span className="hidden text-slate-300 sm:inline">•</span>
               <a
                 href={`mailto:${siteConfig.email}`}
-                className="text-indigo-600 hover:underline"
+                className="text-indigo-600 transition hover:underline"
               >
                 {siteConfig.email}
-              </a>{" "}
-              |{" "}
+              </a>
+              <span className="hidden text-slate-300 sm:inline">•</span>
               <a
                 href={siteConfig.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-indigo-600 hover:underline"
+                className="text-indigo-600 transition hover:underline"
               >
                 LinkedIn
-              </a>{" "}
-              |{" "}
+              </a>
+              <span className="hidden text-slate-300 sm:inline">•</span>
               <a
                 href={siteConfig.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-indigo-600 hover:underline"
+                className="text-indigo-600 transition hover:underline"
               >
                 GitHub
               </a>
-            </p>
+            </div>
             <div className="mt-4">
               <ResumeActions />
             </div>

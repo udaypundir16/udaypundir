@@ -50,11 +50,11 @@ export default function AboutPage() {
               <aside className="space-y-5 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm shadow-slate-200/70">
                 <div className="overflow-hidden rounded-2xl">
                   <Image
-                    src="/uday_port.png"
-                    alt="Portfolio preview of Uday Pundir"
-                    width={1600}
-                    height={1120}
-                    className="h-auto w-full"
+                    src="/uday-profile.jpg"
+                    alt="Uday Pundir"
+                    width={800}
+                    height={800}
+                    className="h-auto w-full object-cover"
                   />
                 </div>
 

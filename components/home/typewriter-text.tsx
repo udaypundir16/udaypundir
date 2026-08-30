@@ -93,11 +93,11 @@ export function TypewriterText({
   }, [cycleMs, text]);
 
   return (
-    <span className={cn("inline-flex items-center", className)}>
-      <span aria-hidden>{displayedText}</span>
+    <span className={cn("inline", className)}>
+      <span aria-hidden className="inline">{displayedText}</span>
       <span
         aria-hidden
-        className="ml-1 inline-block h-[1em] w-[2px] animate-pulse bg-indigo-500"
+        className="ml-1 inline-block h-[0.9em] w-[2px] align-baseline animate-pulse bg-indigo-500"
       />
       <span className="sr-only">{text}</span>
     </span>
