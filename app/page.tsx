@@ -40,10 +40,10 @@ export default function HomePage() {
               <Badge className="mb-4">
                 Open to internships and freelance opportunities
               </Badge>
-              <h1 className="text-balance text-3xl font-bold tracking-tight text-slate-900 xs:text-4xl sm:text-5xl lg:text-6xl">
+              <h1 className="text-balance text-3xl font-bold tracking-tight text-slate-900 dark:text-white xs:text-4xl sm:text-5xl lg:text-6xl">
                 <TypewriterText text="Hi, I'm Uday Pundir" cycleMs={4000} />
               </h1>
-              <p className="mt-4 max-w-2xl text-pretty text-lg leading-relaxed text-slate-600">
+              <p className="mt-4 max-w-2xl text-pretty text-lg leading-relaxed text-slate-600 dark:text-zinc-200">
                 Full Stack Developer building modern, scalable web applications.
                 I create clean, fast, and user-focused products with thoughtful
                 UI and reliable engineering.
@@ -114,9 +114,9 @@ export default function HomePage() {
             description="Professional industry certifications, hackathon recognitions, and competitive problem-solving milestones."
           />
 
-          {/* Certificates Showcase */}
-          <div className="mb-10">
-            <h3 className="mb-5 text-lg font-semibold text-slate-900 sm:text-xl">
+          {/* Professional Certifications */}
+          <div className="mb-12">
+            <h3 className="mb-5 text-lg font-semibold text-slate-900 dark:text-white sm:text-xl">
               Professional Certifications
             </h3>
             <CertificatesShowcase certificates={certificates} />
@@ -124,7 +124,7 @@ export default function HomePage() {
 
           {/* Key Achievements */}
           <div>
-            <h3 className="mb-5 text-lg font-semibold text-slate-900 sm:text-xl">
+            <h3 className="mb-5 text-lg font-semibold text-slate-900 dark:text-white sm:text-xl">
               Hackathon & Coding Recognitions
             </h3>
             <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
@@ -147,14 +147,14 @@ export default function HomePage() {
 
           <div className="grid gap-6 lg:grid-cols-2">
             <Reveal>
-              <article className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm shadow-slate-200/70 sm:p-7">
-                <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600">
+              <article className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm shadow-slate-200/70 sm:p-7 dark:border-slate-800 dark:bg-slate-900/90 dark:shadow-none">
+                <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600 dark:bg-indigo-950/60 dark:text-indigo-400">
                   <GraduationCap className="h-5 w-5" />
                 </div>
-                <h2 className="text-2xl font-semibold text-slate-900">
+                <h2 className="text-2xl font-semibold text-slate-900 dark:text-slate-100">
                   B.Tech in Computer Science & Engineering
                 </h2>
-                <p className="mt-2 text-slate-600">Galgotias College of Engineering & Technology</p>
+                <p className="mt-2 text-slate-600 dark:text-slate-400">Galgotias College of Engineering & Technology</p>
                 <div className="mt-4 flex flex-wrap gap-2 text-sm">
                   <Badge tone="soft">2024-2028</Badge>
                   <Badge tone="soft">
@@ -162,18 +162,18 @@ export default function HomePage() {
                     Greater Noida
                   </Badge>
                 </div>
-                <p className="mt-4 text-sm leading-relaxed text-slate-600 sm:text-base">
+                <p className="mt-4 text-sm leading-relaxed text-slate-600 dark:text-slate-300 sm:text-base">
                   Building a strong foundation in software engineering while applying concepts through project-based learning and hackathon participation.
                 </p>
               </article>
             </Reveal>
 
             <Reveal delay={0.12}>
-              <article className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm shadow-slate-200/70 sm:p-7">
-                <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-violet-50 text-violet-600">
+              <article className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm shadow-slate-200/70 sm:p-7 dark:border-slate-800 dark:bg-slate-900/90 dark:shadow-none">
+                <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-violet-50 text-violet-600 dark:bg-violet-950/60 dark:text-violet-400">
                   <BookOpen className="h-5 w-5" />
                 </div>
-                <h2 className="text-xl font-semibold text-slate-900">Coursework Focus</h2>
+                <h2 className="text-xl font-semibold text-slate-900 dark:text-slate-100">Coursework Focus</h2>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {coursework.map((item) => (
                     <Badge key={item} tone="soft">
@@ -182,8 +182,8 @@ export default function HomePage() {
                   ))}
                 </div>
 
-                <h3 className="mt-6 text-lg font-semibold text-slate-900">Currently Learning</h3>
-                <ul className="mt-3 space-y-2 text-sm text-slate-600 sm:text-base">
+                <h3 className="mt-6 text-lg font-semibold text-slate-900 dark:text-slate-100">Currently Learning</h3>
+                <ul className="mt-3 space-y-2 text-sm text-slate-600 dark:text-slate-400 sm:text-base">
                   {currentlyLearning.map((item) => (
                     <li key={item} className="flex items-start gap-2">
                       <span className="mt-2 h-1.5 w-1.5 rounded-full bg-indigo-500" />

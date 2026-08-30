@@ -25,14 +25,14 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
         delay: index * 0.08,
         ease: [0.22, 1, 0.36, 1],
       }}
-      className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm shadow-slate-200/50 transition-shadow hover:shadow-lg hover:shadow-indigo-100/80"
+      className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm shadow-slate-200/50 transition-all hover:border-indigo-300 hover:shadow-lg hover:shadow-indigo-100/80 dark:border-slate-800 dark:bg-slate-900/90 dark:shadow-none dark:hover:border-indigo-700/60 dark:hover:shadow-indigo-950/40"
     >
       <div className="flex items-start justify-between gap-4">
-        <h3 className="text-xl font-semibold text-slate-900">{project.title}</h3>
+        <h3 className="text-xl font-semibold text-slate-900 dark:text-slate-100">{project.title}</h3>
         {project.featured ? <Badge tone="accent">Featured</Badge> : null}
       </div>
 
-      <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
+      <p className="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300 sm:text-base">
         {project.description}
       </p>
 
@@ -44,7 +44,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
         ))}
       </div>
 
-      <ul className="mt-4 space-y-2 text-sm text-slate-600">
+      <ul className="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-400">
         {project.features.map((feature) => (
           <li key={feature} className="flex items-start gap-2">
             <span className="mt-2 h-1.5 w-1.5 rounded-full bg-indigo-500" />
@@ -70,7 +70,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
           className={buttonVariants({
             variant: "outline",
             size: "sm",
-            className: "group-hover:bg-indigo-100",
+            className: "group-hover:bg-indigo-100 dark:group-hover:bg-indigo-950/60",
           })}
         >
           <ArrowUpRight className="h-4 w-4" />

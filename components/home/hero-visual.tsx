@@ -13,17 +13,25 @@ export function HeroVisual() {
     >
       <div className="relative aspect-square w-64 shrink-0 sm:w-72 md:w-80 lg:w-96">
         {/* Ambient Gradient Glow */}
-        <div className="absolute -inset-2 rounded-full bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-400 opacity-70 blur-md" />
+        <div className="absolute -inset-2 rounded-full bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-400 opacity-70 blur-md dark:hidden" />
 
         {/* Profile Image Container */}
-        <div className="relative h-full w-full overflow-hidden rounded-full border-4 border-white bg-slate-100 shadow-2xl shadow-indigo-200/50">
+        <div className="relative h-full w-full overflow-hidden rounded-full border-4 border-white bg-slate-100 shadow-2xl shadow-indigo-200/50 dark:border-0 dark:border-transparent dark:bg-transparent dark:shadow-none">
           <Image
             src="/uday-profile.jpg"
             alt="Uday Pundir"
             fill
             priority
             sizes="(max-width: 640px) 256px, (max-width: 768px) 288px, (max-width: 1024px) 320px, 384px"
-            className="h-full w-full object-cover object-center"
+            className="h-full w-full object-cover object-center dark:hidden"
+          />
+          <Image
+            src="/uday-profile-dark.jpg"
+            alt="Uday Pundir"
+            fill
+            priority
+            sizes="(max-width: 640px) 256px, (max-width: 768px) 288px, (max-width: 1024px) 320px, 384px"
+            className="hidden h-full w-full object-cover object-center dark:block"
           />
         </div>
       </div>

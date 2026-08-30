@@ -54,23 +54,23 @@ export function CertificateModal({ certificate, onClose }: CertificateModalProps
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 16 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="relative z-10 flex max-h-[92vh] w-full max-w-3xl flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-2xl shadow-indigo-950/20"
+            className="relative z-10 flex max-h-[92vh] w-full max-w-3xl flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-2xl shadow-indigo-950/20 dark:border-slate-800 dark:bg-slate-900 dark:shadow-indigo-950/40"
             role="dialog"
             aria-modal="true"
             aria-labelledby="certificate-modal-title"
           >
             {/* Modal Header */}
-            <div className="flex items-center justify-between border-b border-slate-100 px-6 py-4">
+            <div className="flex items-center justify-between border-b border-slate-100 px-6 py-4 dark:border-slate-800">
               <div className="flex items-center gap-2">
-                <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-50 text-indigo-600">
+                <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-50 text-indigo-600 dark:bg-indigo-950/60 dark:text-indigo-400">
                   <Award className="h-4 w-4" />
                 </div>
-                <span className="text-sm font-semibold text-slate-800">Verified Credential</span>
+                <span className="text-sm font-semibold text-slate-800 dark:text-slate-100">Verified Credential</span>
               </div>
               <button
                 type="button"
                 onClick={onClose}
-                className="inline-flex h-8 w-8 items-center justify-center rounded-full text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-700"
+                className="inline-flex h-8 w-8 items-center justify-center rounded-full text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-700 dark:hover:bg-slate-800 dark:hover:text-slate-200"
                 aria-label="Close dialog"
               >
                 <X className="h-5 w-5" />
@@ -81,7 +81,7 @@ export function CertificateModal({ certificate, onClose }: CertificateModalProps
             <div className="overflow-y-auto p-6 sm:p-8">
               <div className="grid gap-6 md:grid-cols-[1.1fr_1fr] md:items-center">
                 {/* Certificate Image Preview */}
-                <div className="relative flex aspect-square w-full items-center justify-center overflow-hidden rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50 to-indigo-50/40 p-4 sm:p-6 shadow-inner">
+                <div className="relative flex aspect-square w-full items-center justify-center overflow-hidden rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50 to-indigo-50/40 p-4 shadow-inner sm:p-6 dark:border-slate-800 dark:from-slate-800/60 dark:to-indigo-950/40">
                   <div className="relative h-full w-full">
                     <Image
                       src={certificate.image}
@@ -102,33 +102,33 @@ export function CertificateModal({ certificate, onClose }: CertificateModalProps
                     </Badge>
                     <h3
                       id="certificate-modal-title"
-                      className="text-xl font-bold text-slate-900 sm:text-2xl"
+                      className="text-xl font-bold text-slate-900 dark:text-slate-100 sm:text-2xl"
                     >
                       {certificate.title}
                     </h3>
                   </div>
 
-                  <p className="text-sm leading-relaxed text-slate-600 sm:text-base">
+                  <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-300 sm:text-base">
                     {certificate.description}
                   </p>
 
-                  <div className="space-y-2.5 rounded-xl border border-slate-100 bg-slate-50/80 p-3.5 text-xs text-slate-600 sm:text-sm">
+                  <div className="space-y-2.5 rounded-xl border border-slate-100 bg-slate-50/80 p-3.5 text-xs text-slate-600 dark:border-slate-800 dark:bg-slate-800/60 dark:text-slate-300 sm:text-sm">
                     <div className="flex items-center gap-2">
-                      <Building2 className="h-4 w-4 text-indigo-500 shrink-0" />
-                      <span className="font-medium text-slate-700">Organization:</span>
+                      <Building2 className="h-4 w-4 text-indigo-500 shrink-0 dark:text-indigo-400" />
+                      <span className="font-medium text-slate-700 dark:text-slate-200">Organization:</span>
                       <span>{certificate.issuer}</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Calendar className="h-4 w-4 text-indigo-500 shrink-0" />
-                      <span className="font-medium text-slate-700">Issue Date:</span>
+                      <Calendar className="h-4 w-4 text-indigo-500 shrink-0 dark:text-indigo-400" />
+                      <span className="font-medium text-slate-700 dark:text-slate-200">Issue Date:</span>
                       <span>{certificate.date}</span>
                     </div>
                     {certificate.credentialId && (
                       <div className="flex items-start gap-2">
-                        <Hash className="mt-0.5 h-4 w-4 text-indigo-500 shrink-0" />
+                        <Hash className="mt-0.5 h-4 w-4 text-indigo-500 shrink-0 dark:text-indigo-400" />
                         <div className="flex-1 overflow-hidden">
-                          <span className="font-medium text-slate-700">Credential ID: </span>
-                          <span className="break-all font-mono text-xs text-slate-500">
+                          <span className="font-medium text-slate-700 dark:text-slate-200">Credential ID: </span>
+                          <span className="break-all font-mono text-xs text-slate-500 dark:text-slate-400">
                             {certificate.credentialId}
                           </span>
                         </div>

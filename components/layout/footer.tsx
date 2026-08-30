@@ -13,18 +13,18 @@ const socialIconMap: Record<string, React.ReactNode> = {
 
 export function Footer() {
   return (
-    <footer className="border-t border-slate-200 bg-white/70">
+    <footer className="border-t border-slate-200 bg-white/70 dark:border-neutral-800 dark:bg-black/70">
       <Container className="grid gap-8 py-12 md:grid-cols-3 md:gap-10">
         <div className="space-y-3">
-          <h2 className="text-lg font-semibold text-slate-900">{siteConfig.name}</h2>
-          <p className="text-sm leading-relaxed text-slate-600">
+          <h2 className="text-lg font-semibold text-slate-900 dark:text-white">{siteConfig.name}</h2>
+          <p className="text-sm leading-relaxed text-slate-600 dark:text-zinc-300">
             Building modern digital experiences with code, consistency, and
             creativity.
           </p>
         </div>
 
         <div>
-          <h3 className="mb-3 text-sm font-semibold uppercase tracking-wide text-slate-500">
+          <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-zinc-300">
             Quick Links
           </h3>
           <ul className="grid gap-2 text-sm">
@@ -41,7 +41,7 @@ export function Footer() {
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-slate-600 transition-colors hover:text-indigo-600"
+                      className="text-slate-600 transition-colors hover:text-indigo-600 dark:text-zinc-200 dark:hover:text-white"
                     >
                       {item.label}
                     </a>
@@ -53,7 +53,7 @@ export function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-slate-600 transition-colors hover:text-indigo-600"
+                    className="text-slate-600 transition-colors hover:text-indigo-600 dark:text-zinc-200 dark:hover:text-white"
                   >
                     {item.label}
                   </Link>
@@ -64,7 +64,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="mb-3 text-sm font-semibold uppercase tracking-wide text-slate-500">
+          <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-zinc-300">
             Connect
           </h3>
           <ul className="grid gap-2 text-sm">
@@ -74,9 +74,11 @@ export function Footer() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-slate-600 transition-colors hover:text-indigo-600"
+                  className="inline-flex items-center gap-2 text-slate-600 transition-colors hover:text-indigo-600 dark:text-zinc-200 dark:hover:text-white"
                 >
-                  {socialIconMap[link.label] ?? <Trophy className="h-4 w-4" />}
+                  <span className="text-indigo-600 dark:text-indigo-400">
+                    {socialIconMap[link.label] ?? <Trophy className="h-4 w-4" />}
+                  </span>
                   <span>{link.label}</span>
                 </Link>
               </li>
@@ -85,8 +87,8 @@ export function Footer() {
         </div>
       </Container>
 
-      <div className="border-t border-slate-200/80">
-        <Container className="py-4 text-center text-xs text-slate-500 sm:text-sm">
+      <div className="border-t border-slate-200/80 dark:border-neutral-800">
+        <Container className="py-4 text-center text-xs text-slate-500 dark:text-zinc-400 sm:text-sm">
           © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
         </Container>
       </div>

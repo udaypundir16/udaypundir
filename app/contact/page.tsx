@@ -41,28 +41,28 @@ export default function ContactPage() {
       <section className="pb-20">
         <Container className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
           <Reveal>
-            <aside className="space-y-5 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm shadow-slate-200/70">
-              <h2 className="text-xl font-semibold text-slate-900">
+            <aside className="space-y-5 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm shadow-slate-200/70 dark:border-slate-800 dark:bg-slate-900/90 dark:shadow-none">
+              <h2 className="text-xl font-semibold text-slate-900 dark:text-slate-100">
                 Contact Information
               </h2>
 
-              <ul className="space-y-3 text-sm text-slate-600 sm:text-base">
+              <ul className="space-y-3 text-sm text-slate-600 dark:text-slate-300 sm:text-base">
                 <li className="flex items-start gap-3">
-                  <Mail className="mt-0.5 h-4 w-4 text-indigo-600" />
+                  <Mail className="mt-0.5 h-4 w-4 text-indigo-600 dark:text-indigo-400" />
                   <span>{siteConfig.email}</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <Phone className="mt-0.5 h-4 w-4 text-indigo-600" />
+                  <Phone className="mt-0.5 h-4 w-4 text-indigo-600 dark:text-indigo-400" />
                   <span>{siteConfig.phone}</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <MapPin className="mt-0.5 h-4 w-4 text-indigo-600" />
+                  <MapPin className="mt-0.5 h-4 w-4 text-indigo-600 dark:text-indigo-400" />
                   <span>{siteConfig.location}</span>
                 </li>
               </ul>
 
               <div>
-                <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-500">
+                <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
                   Social Links
                 </h3>
                 <ul className="mt-3 grid gap-2 text-sm sm:text-base">
@@ -76,7 +76,7 @@ export default function ContactPage() {
                           href={link.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 text-slate-700 transition-colors hover:text-indigo-600"
+                          className="inline-flex items-center gap-2 text-slate-700 transition-colors hover:text-indigo-600 dark:text-slate-300 dark:hover:text-indigo-400"
                         >
                           <Icon className="h-4 w-4" />
                           {link.label}
@@ -87,8 +87,8 @@ export default function ContactPage() {
                 </ul>
               </div>
 
-              <div className="rounded-2xl border border-indigo-100 bg-indigo-50/60 p-4">
-                <p className="text-sm text-indigo-700">
+              <div className="rounded-2xl border border-indigo-100 bg-indigo-50/60 p-4 dark:border-indigo-900/60 dark:bg-indigo-950/40">
+                <p className="text-sm text-indigo-700 dark:text-indigo-300">
                   Open to opportunities involving internships, freelance
                   engagements, team collaborations, and product discussions.
                 </p>

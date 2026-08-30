@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Building2, Calendar, Eye } from "lucide-react";
+import { Calendar, Eye } from "lucide-react";
 import type { Certificate } from "@/data/site";
 import { Badge } from "@/components/ui/badge";
 
@@ -30,10 +30,10 @@ export function CertificateCard({
         delay: index * 0.05,
         ease: [0.22, 1, 0.36, 1],
       }}
-      className="group flex h-full w-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 text-left shadow-sm shadow-slate-200/50 transition-all hover:border-indigo-200 hover:shadow-lg hover:shadow-indigo-100/70 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+      className="group flex h-full w-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 text-left shadow-sm shadow-slate-200/50 transition-all hover:border-indigo-300 hover:shadow-lg hover:shadow-indigo-100/70 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 dark:border-slate-800 dark:bg-slate-900/90 dark:shadow-none dark:hover:border-indigo-700/60 dark:hover:shadow-indigo-950/40"
     >
       {/* Certificate Image Container */}
-      <div className="relative mb-4 flex aspect-[4/3] w-full items-center justify-center overflow-hidden rounded-xl border border-slate-100 bg-gradient-to-br from-slate-50 to-indigo-50/30 p-3 shadow-inner">
+      <div className="relative mb-4 flex aspect-[4/3] w-full items-center justify-center overflow-hidden rounded-xl border border-slate-100 bg-gradient-to-br from-slate-50 to-indigo-50/30 p-3 shadow-inner dark:border-slate-800 dark:from-slate-800/80 dark:to-indigo-950/40">
         <div className="relative h-full w-full">
           <Image
             src={certificate.image}
@@ -45,8 +45,8 @@ export function CertificateCard({
         </div>
 
         {/* Hover overlay cue */}
-        <div className="absolute inset-0 flex items-center justify-center bg-indigo-900/10 opacity-0 backdrop-blur-[1px] transition-opacity duration-200 group-hover:opacity-100">
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1.5 text-xs font-semibold text-indigo-700 shadow-md">
+        <div className="absolute inset-0 flex items-center justify-center bg-indigo-900/10 opacity-0 backdrop-blur-[1px] transition-opacity duration-200 group-hover:opacity-100 dark:bg-indigo-950/40">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1.5 text-xs font-semibold text-indigo-700 shadow-md dark:bg-slate-800 dark:text-indigo-400">
             <Eye className="h-3.5 w-3.5" />
             View Certificate
           </span>
@@ -60,18 +60,18 @@ export function CertificateCard({
             <Badge tone="soft" className="text-xs font-medium">
               {certificate.issuer}
             </Badge>
-            <span className="flex items-center gap-1 text-xs text-slate-400">
+            <span className="flex items-center gap-1 text-xs text-slate-400 dark:text-slate-400">
               <Calendar className="h-3 w-3" />
               {certificate.date}
             </span>
           </div>
 
-          <h3 className="mt-2.5 text-base font-semibold text-slate-900 transition-colors group-hover:text-indigo-600 sm:text-lg">
+          <h3 className="mt-2.5 text-base font-semibold text-slate-900 transition-colors group-hover:text-indigo-600 dark:text-slate-100 dark:group-hover:text-indigo-400 sm:text-lg">
             {certificate.title}
           </h3>
         </div>
 
-        <div className="flex items-center gap-1.5 pt-1 text-xs font-medium text-indigo-600 group-hover:underline">
+        <div className="flex items-center gap-1.5 pt-1 text-xs font-medium text-indigo-600 group-hover:underline dark:text-indigo-400">
           <span>View details & credential</span>
         </div>
       </div>

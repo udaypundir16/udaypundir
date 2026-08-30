@@ -29,16 +29,16 @@ export default function AboutPage() {
         <Container>
           <div className="grid gap-7 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
             <Reveal>
-              <div className="space-y-5 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm shadow-slate-200/70 sm:p-7">
+              <div className="space-y-5 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm shadow-slate-200/70 sm:p-7 dark:border-slate-800 dark:bg-slate-900/90 dark:shadow-none">
                 {focusAreas.map((item, index) => (
                   <article key={item.title} className="space-y-2">
-                    <h2 className="text-xl font-semibold text-slate-900">{item.title}</h2>
-                    <p className="text-sm leading-relaxed text-slate-600 sm:text-base">
+                    <h2 className="text-xl font-semibold text-slate-900 dark:text-slate-100">{item.title}</h2>
+                    <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-300 sm:text-base">
                       {item.description}
                     </p>
                     {index < focusAreas.length - 1 ? (
                       <div className="pt-2">
-                        <div className="h-px w-full bg-slate-200" />
+                        <div className="h-px w-full bg-slate-200 dark:bg-slate-800" />
                       </div>
                     ) : null}
                   </article>
@@ -47,20 +47,27 @@ export default function AboutPage() {
             </Reveal>
 
             <Reveal delay={0.14}>
-              <aside className="space-y-5 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm shadow-slate-200/70">
+              <aside className="space-y-5 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm shadow-slate-200/70 dark:border-slate-800 dark:bg-slate-900/90 dark:shadow-none">
                 <div className="overflow-hidden rounded-2xl">
                   <Image
                     src="/uday-profile.jpg"
                     alt="Uday Pundir"
                     width={800}
                     height={800}
-                    className="h-auto w-full object-cover"
+                    className="h-auto w-full object-cover dark:hidden"
+                  />
+                  <Image
+                    src="/uday-profile-dark.jpg"
+                    alt="Uday Pundir"
+                    width={800}
+                    height={800}
+                    className="hidden h-auto w-full object-cover dark:block"
                   />
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold text-slate-900">{siteConfig.name}</h3>
-                  <p className="mt-1 text-sm text-slate-600">{siteConfig.role}</p>
+                  <h3 className="text-xl font-semibold text-slate-900 dark:text-slate-100">{siteConfig.name}</h3>
+                  <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">{siteConfig.role}</p>
                 </div>
 
                 <div className="flex flex-wrap gap-2">
@@ -76,7 +83,7 @@ export default function AboutPage() {
 
       <section className="pb-20">
         <Container className="max-w-4xl">
-          <h2 className="mb-6 text-2xl font-semibold text-slate-900">My Journey</h2>
+          <h2 className="mb-6 text-2xl font-semibold text-slate-900 dark:text-slate-100">My Journey</h2>
           <div className="space-y-5">
             {journeyMilestones.map((item, index) => (
               <Reveal key={item.title} delay={index * 0.05}>
