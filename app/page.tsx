@@ -37,35 +37,37 @@ export default function HomePage() {
         <Container>
           <div className="grid gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
             <Reveal>
-              <Badge className="mb-4">
-                Open to internships and freelance opportunities
-              </Badge>
-              <h1 className="text-balance text-3xl font-bold tracking-tight text-slate-900 dark:text-white xs:text-4xl sm:text-5xl lg:text-6xl">
-                <TypewriterText text="Hi, I'm Uday Pundir" cycleMs={4000} />
-              </h1>
-              <p className="mt-4 max-w-2xl text-pretty text-lg leading-relaxed text-slate-600 dark:text-zinc-200">
-                Full Stack Developer building modern, scalable web applications.
-                I create clean, fast, and user-focused products with thoughtful
-                UI and reliable engineering.
-              </p>
+              <div className="relative -top-4 sm:-top-6 lg:-top-8">
+                <Badge className="mb-4">
+                  Open to internships and freelance opportunities
+                </Badge>
+                <h1 className="text-balance text-3xl font-bold tracking-tight text-slate-900 dark:text-white xs:text-4xl sm:text-5xl lg:text-6xl">
+                  <TypewriterText text="Hi, I'm Uday Pundir" cycleMs={4000} />
+                </h1>
+                <p className="mt-4 max-w-2xl text-pretty text-lg leading-relaxed text-slate-600 dark:text-zinc-200">
+                  Full Stack Developer building modern, scalable web applications.
+                  I create clean, fast, and user-focused products with thoughtful
+                  UI and reliable engineering.
+                </p>
 
-              <div className="mt-7 flex flex-wrap items-center gap-3">
-                <a
-                  href="/Uday-Pundir-Resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={buttonVariants({ variant: "primary" })}
-                >
-                  Resume
-                  <FileText className="h-4 w-4" />
-                </a>
-                <Link
-                  href="/contact"
-                  className={buttonVariants({ variant: "secondary" })}
-                >
-                  Contact Me
-                  <Mail className="h-4 w-4" />
-                </Link>
+                <div className="mt-7 flex flex-wrap items-center gap-3">
+                  <a
+                    href="/Uday-Pundir-Resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={buttonVariants({ variant: "primary" })}
+                  >
+                    Resume
+                    <FileText className="h-4 w-4" />
+                  </a>
+                  <Link
+                    href="/contact"
+                    className={buttonVariants({ variant: "secondary" })}
+                  >
+                    Contact Me
+                    <Mail className="h-4 w-4" />
+                  </Link>
+                </div>
               </div>
             </Reveal>
 

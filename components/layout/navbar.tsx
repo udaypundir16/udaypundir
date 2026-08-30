@@ -51,7 +51,7 @@ export function Navbar() {
           : "bg-white/60 backdrop-blur-md dark:bg-black/60",
       )}
     >
-      <Container className="flex h-20 items-center justify-between">
+        <Container className="flex h-20 sm:h-24 items-center justify-between">
         <Link
           href="/"
           className="group inline-flex items-center"
@@ -63,7 +63,7 @@ export function Navbar() {
             width={320}
             height={90}
             priority
-            className="h-10 w-auto object-contain mix-blend-multiply transition-all sm:h-12 dark:hidden"
+            className="h-16 w-auto object-contain mix-blend-multiply transition-all sm:h-20 dark:hidden"
           />
           <Image
             src="/signature-logo-dark.png"
@@ -71,7 +71,7 @@ export function Navbar() {
             width={320}
             height={90}
             priority
-            className="hidden h-10 w-auto object-contain mix-blend-screen transition-all sm:h-12 dark:block"
+            className="hidden h-16 w-auto object-contain mix-blend-screen transition-all sm:h-20 dark:block"
           />
         </Link>
 

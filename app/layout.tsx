@@ -50,7 +50,7 @@ export default function RootLayout({
             </div>
 
             <Navbar />
-            <main className="pt-24">{children}</main>
+            <main className="pt-24 sm:pt-28">{children}</main>
             <Footer />
             <BackToTop />
           </div>
