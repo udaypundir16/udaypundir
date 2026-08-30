@@ -49,6 +49,20 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: "ATS-LENS",
+    description:
+      "An AI-powered resume evaluator that parses resumes against job descriptions using NLP and semantic matching, ranking candidates and generating automated improvement feedback to speed up HR shortlisting.",
+    stack: ["React", "FastAPI", "NLP/spaCy", "Semantic Scoring", "Gemini API"],
+    features: [
+      "Automated skill & experience extraction from resumes",
+      "JD-to-resume semantic matching for accurate ranking",
+      "AI-generated, candidate-specific feedback reports",
+    ],
+    githubUrl: "https://github.com/udaypundir16",
+    liveUrl: "https://example.com/",
+    featured: true,
+  },
+  {
     title: "SettleIn",
     description:
       "A student accommodation and hostel/PG finder platform built to help students discover suitable stays with a smooth search experience.",
@@ -136,18 +150,77 @@ export const skillGroups: SkillGroup[] = [
   },
 ];
 
-export type Certification = {
+export type Certificate = {
+  id: string;
   title: string;
   issuer: string;
+  date: string;
+  image: string;
+  credentialId?: string;
+  description: string;
+  verificationUrl: string;
 };
 
-export const certifications: Certification[] = [
-  { title: "AWS Educate Machine Learning Foundations", issuer: "Amazon" },
-  { title: "Data Science Essentials with Python", issuer: "Cisco" },
-  { title: "Generative AI in Action", issuer: "IBM" },
-  { title: "Develop Generative AI Apps in Azure", issuer: "Microsoft" },
-  { title: "Data Analytics Job Simulation", issuer: "Deloitte Australia - Forage" },
-  { title: "Introduction to Cloud Infrastructure", issuer: "Microsoft" },
+export const certificates: Certificate[] = [
+  {
+    id: "aws-ml-foundations",
+    title: "AWS Educate Machine Learning Foundations",
+    issuer: "Amazon Web Services (AWS)",
+    date: "2026",
+    image: "/certificates/aws-ml-foundations.png",
+    credentialId: "7e92ee78-8580-482b-b343-be8ba2bd779c",
+    description:
+      "Completed foundational training in Machine Learning, including core ML concepts, workflows, and applications using AWS technologies.",
+    verificationUrl:
+      "https://www.credly.com/earner/earned/badge/7e92ee78-8580-482b-b343-be8ba2bd779c",
+  },
+  {
+    id: "cisco-data-science",
+    title: "Data Science Essentials with Python",
+    issuer: "Cisco",
+    date: "2026",
+    image: "/certificates/cisco-data-science-python.png",
+    credentialId: "ffc670e8-c446-4d9f-a83e-b9587c289e90",
+    description:
+      "Developed skills in Python-based data exploration, visualization, and modeling using industry-standard data science libraries.",
+    verificationUrl:
+      "https://www.credly.com/earner/earned/badge/ffc670e8-c446-4d9f-a83e-b9587c289e90",
+  },
+  {
+    id: "ibm-gen-ai",
+    title: "Generative AI in Action",
+    issuer: "IBM",
+    date: "2026",
+    image: "/certificates/ibm-generative-ai.png",
+    credentialId: "ca6a3fcb-c55e-4dd4-98f8-57e06f020809",
+    description:
+      "Applied generative AI concepts, prompt engineering techniques, and Python libraries while exploring GenAI applications and ethical considerations.",
+    verificationUrl:
+      "https://www.credly.com/earner/earned/badge/ca6a3fcb-c55e-4dd4-98f8-57e06f020809",
+  },
+  {
+    id: "msft-azure-genai",
+    title: "Develop Generative AI Apps in Azure",
+    issuer: "Microsoft",
+    date: "August 13, 2026",
+    image: "/certificates/microsoft-azure-genai.png",
+    description:
+      "Learned concepts and practices for developing generative AI applications using Microsoft Azure and its AI capabilities.",
+    verificationUrl:
+      "https://learn.microsoft.com/en-us/users/udaypundir16/achievements/print/3zky6wgh?tab=tab-learning-paths",
+  },
+  {
+    id: "deloitte-data-analytics",
+    title: "Deloitte Australia – Data Analytics Job Simulation",
+    issuer: "Forage",
+    date: "August 13, 2026",
+    image: "/certificates/deloitte-data-analytics.png",
+    credentialId: "6a7d8ef000ad9dc2bf98c575",
+    description:
+      "Completed a practical data analytics job simulation focused on analyzing data, deriving insights, and applying analytical problem-solving in a professional business context.",
+    verificationUrl:
+      "https://www.theforage.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_6a7d8e0700ad9dc2bf98822f_1786614013560_completion_certificate.pdf",
+  },
 ];
 
 export type Experience = {
@@ -235,21 +308,9 @@ export const achievements: Achievement[] = [
     tag: "Hackathon",
   },
   {
-    title: "Dextrix 2025 Participation",
+    title: "Dextrix 2025 — 2nd Position (Round 2)",
     description:
-      "Collaborated in a high-energy competition focused on building impactful products quickly.",
-    tag: "Competition",
-  },
-  {
-    title: "Team Future Forge",
-    description:
-      "Built Farmer360 with Future Forge, emphasizing collaboration and practical execution.",
-    tag: "Teamwork",
-  },
-  {
-    title: "2nd Position in Round 2",
-    description:
-      "Secured 2nd position in round 2 among 50 teams during Dextrix 2025.",
+      "Built Farmer360 as part of Team Future Forge, collaborating in a competitive product-building challenge and securing 2nd position among 50 teams in Round 2.",
     tag: "Recognition",
   },
   {

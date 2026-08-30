@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ProjectCard } from "@/components/cards/project-card";
 import { SkillCard } from "@/components/cards/skill-card";
 import { AchievementCard } from "@/components/cards/achievement-card";
+import { CertificatesShowcase } from "@/components/cards/certificates-showcase";
 import { CTASection } from "@/components/common/cta-section";
 import { SectionTitle } from "@/components/common/section-title";
 import { HeroVisual } from "@/components/home/hero-visual";
@@ -15,6 +16,7 @@ import { Reveal } from "@/components/ui/reveal";
 import {
   projects,
   skillGroups,
+  certificates,
   achievements,
   coursework,
   currentlyLearning,
@@ -26,7 +28,7 @@ export const metadata = createPageMetadata(
   "Explore the portfolio of Uday Pundir, a full stack developer building modern and scalable web applications.",
 );
 
-const featuredProjects = projects.filter((project) => project.featured).slice(0, 3);
+const featuredProjects = projects.filter((project) => project.featured);
 
 export default function HomePage() {
   return (
@@ -108,16 +110,30 @@ export default function HomePage() {
       <section className="pb-14">
         <Container>
           <SectionTitle
-            title="Achievements"
-            description="Milestones, hackathon recognitions, and competitive problem-solving highlights."
+            title="Certificates & Achievements"
+            description="Professional industry certifications, hackathon recognitions, and competitive problem-solving milestones."
           />
 
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {achievements.map((achievement, index) => (
-              <Reveal key={achievement.title} delay={index * 0.06}>
-                <AchievementCard achievement={achievement} />
-              </Reveal>
-            ))}
+          {/* Certificates Showcase */}
+          <div className="mb-10">
+            <h3 className="mb-5 text-lg font-semibold text-slate-900 sm:text-xl">
+              Professional Certifications
+            </h3>
+            <CertificatesShowcase certificates={certificates} />
+          </div>
+
+          {/* Key Achievements */}
+          <div>
+            <h3 className="mb-5 text-lg font-semibold text-slate-900 sm:text-xl">
+              Hackathon & Coding Recognitions
+            </h3>
+            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+              {achievements.map((achievement, index) => (
+                <Reveal key={achievement.title} delay={index * 0.06}>
+                  <AchievementCard achievement={achievement} />
+                </Reveal>
+              ))}
+            </div>
           </div>
         </Container>
       </section>
